@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+	<head>
+		<title>js</title>
+	</head>
+	<body>
+		<div id="header">
+			<h1>javascript</h1>
+		</div>
+		<ul>
+			<li>one</li>
+			<li>two</li>
+		</ul>
+		<input type="text" id="name">
+		<button id="btn">add</button>
+		<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+		<script type="text/javascript">
+			// $('#header h1').html('cool')
+			// $('ul').append('<li>five</li>');
+			$('#btn').click(function() {
+				var value = $('#name').val();
+				$('ul').append('<li>' + value + '</li>');
+			})
+		</script>
+	</body>
+</html>
