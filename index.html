@@ -2,15 +2,20 @@
 <html>
 	<head>
 		<title>js</title>
+		<style>
+			body {background-color: cornsilk;}
+			h1   {color: seagreen;}
+			ul    {background-color: lightgreen;}
+		</style>
 	</head>
 	<body>
 		<div id="header">
 			<h1>javascript</h1>
 		</div>
-		<ul>
-			<li>one</li>
-			<li>two</li>
-		</ul>
+			<ul id="list">
+				<li>one</li>
+				<li>two</li>
+			</ul>
 		<input type="text" id="name">
 		<button id="btn">add</button>
 		<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
@@ -19,7 +24,11 @@
 			// $('ul').append('<li>five</li>');
 			$('#btn').click(function() {
 				var value = $('#name').val();
+				
+				var ul = $('ul');
+				ul.slideUp(1000);
 				$('ul').append('<li>' + value + '</li>');
+				ul.delay(1000).slideDown(1000);
 			})
 		</script>
 	</body>
