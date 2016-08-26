@@ -6,6 +6,15 @@
 			body {background-color: cornsilk;}
 			h1   {color: seagreen;}
 			ul    {background-color: lightgreen;}
+			label { 
+					display: inline-block; 
+					width: 120px; 
+					height: 60px; 
+					background-color: lavender;
+					text-align: center;
+					vertical-align: middle;
+					display: table-cell;
+				}
 		</style>
 	</head>
 	<body>
@@ -16,8 +25,13 @@
 				<li>one</li>
 				<li>two</li>
 			</ul>
+			<label class="lbl" data-labelid="l1">a</label>
+			<label class="lbl" data-labelid="l2">b</label>
+			<label class="lbl" data-labelid="l3">c</label>
+			<br/>
 		<input type="text" id="name">
 		<button id="btn">add</button>
+		<button id="btn2">interaction</button>
 		<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 		<script type="text/javascript">
 			// $('#header h1').html('cool')
@@ -30,6 +44,16 @@
 				$('ul').append('<li>' + value + '</li>');
 				ul.delay(1000).slideDown(1000);
 			})
+
+			$('.lbl').on('click', function() {
+				var labelId = $(this).attr('data-labelid');
+				$('[data-labelid="' + labelId + '"]')
+				.html('clicked')
+				.css('backgroundColor', 'lightsalmon')
+				.toggle(1000);
+				// alert(labelId);
+			});
+
 		</script>
 	</body>
 </html>
